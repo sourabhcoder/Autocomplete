@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+
+    <virtualType name="DailyViewGridCollection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">report_viewed_product_aggregated_daily</argument>
+            <argument name="resourceModel" xsi:type="string">Voicyou\ProductViews\Model\ResourceModel\Daily</argument>
+        </arguments>
+    </virtualType>
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="productviews_listing_daily_data_source" xsi:type="string">DailyViewGridCollection</item>
+            </argument>
+        </arguments>
+    </type>
+    
+    
+    <virtualType name="MonthlyViewGridCollection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">report_viewed_product_aggregated_monthly</argument>
+            <argument name="resourceModel" xsi:type="string">Voicyou\ProductViews\Model\ResourceModel\Monthly</argument>
+        </arguments>
+    </virtualType>
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="productviews_listing_monthly_data_source" xsi:type="string">MonthlyViewGridCollection</item>
+            </argument>
+        </arguments>
+    </type>
+    
+    
+    <virtualType name="YearlyViewGridCollection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">report_viewed_product_aggregated_yearly</argument>
+            <argument name="resourceModel" xsi:type="string">Voicyou\ProductViews\Model\ResourceModel\Yearly</argument>
+        </arguments>
+    </virtualType>
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="productviews_listing_yearly_data_source" xsi:type="string">YearlyViewGridCollection</item>
+            </argument>
+        </arguments>
+    </type>
+</config>
