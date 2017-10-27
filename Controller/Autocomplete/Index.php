@@ -48,7 +48,7 @@ class Index extends \Magento\Framework\App\Action\Action
     {
           if ($this->_request->getParam('searchterm') == '')
           {
-              return NULL;
+              return '';
           }
           $allProducts= $this->searchterm->getProductData($this->_request->getParams());
           $prodReturnData = array();
