@@ -53,7 +53,6 @@ $helper = $this->helper('Magento\Search\Helper\Data');
 </div>
 <script>
 require(['jquery'],function($){
-    doSearch = true;
     $('#search').on('keyup',function(){
         <?php $loadImg = $block->getViewFileUrl('Sourabh_Autocomplete::images/rotate.gif'); ?>
         $('#idautosuggest').html("<img width='50%' height='50%' style = 'float:left;margin-left:35%;' src=<?php echo $loadImg; ?> />");
