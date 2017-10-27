@@ -58,25 +58,25 @@ require(['jquery'],function($){
         <?php $loadImg = $block->getViewFileUrl('Sourabh_Autocomplete::images/rotate.gif'); ?>
         $('#idautosuggest').html("<img width='50%' height='50%' style = 'float:left;margin-left:35%;' src=<?php echo $loadImg; ?> />");
         $('#search_autocomplete').css('display','none');
-        if (doSearch == true)
-        {
-            doSearch = false;
-            $.ajax({
+        var currentRequest = null;
+        currentRequest = $.ajax({
             url: "<?php echo $this->getUrl('souautocomplete/autocomplete/index'); ?>",
             method: "POST",
             async: true,
             data: {searchterm:$('#search').val()},
+            beforeSend : function(){           
+                if(currentRequest != null) {
+                    $('#search_autocomplete').css('display','block');
+                    currentRequest.abort();
+                }
+            },
             success: function(response){
                 doSearch = true;
                 $('#idautosuggest').empty().html(response);
-                
             },
-            fail: function(response){
-                
+            fail: function(response){     
             }
         });
-        }
-        
     });
 });
 </script>
