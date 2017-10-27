@@ -53,11 +53,11 @@ $helper = $this->helper('Magento\Search\Helper\Data');
 </div>
 <script>
 require(['jquery'],function($){
+    var currentRequest = null;                                         
     $('#search').on('keyup',function(){
         <?php $loadImg = $block->getViewFileUrl('Sourabh_Autocomplete::images/rotate.gif'); ?>
         $('#idautosuggest').html("<img width='50%' height='50%' style = 'float:left;margin-left:35%;' src=<?php echo $loadImg; ?> />");
         $('#search_autocomplete').css('display','none');
-        var currentRequest = null;
         currentRequest = $.ajax({
             url: "<?php echo $this->getUrl('souautocomplete/autocomplete/index'); ?>",
             method: "POST",
