@@ -1,9 +1,5 @@
 <?php
-/**
- *
- * Cart Printer Controller
- * Copyright © 2016 Voicyou Softwares. All rights reserved.
- */
+
 namespace Sourabh\Autocomplete\Controller\Autocomplete;
 
 class Index extends \Magento\Framework\App\Action\Action
@@ -19,10 +15,23 @@ class Index extends \Magento\Framework\App\Action\Action
      * @var type 
      */
     protected $searchterm;
-    
+    /**
+     *
+     * @var type 
+     */
     protected $product;
-    
+    /**
+     *
+     * @var type 
+     */
     protected $storeManagerInterface;
+    /**
+     * 
+     * @param \Magento\Framework\App\Action\Context $context
+     * @param \Sourabh\Autocomplete\Model\ResourceModel\Searchterm $searchterm
+     * @param \Magento\Catalog\Model\ProductFactory $product
+     * @param \Magento\Store\Model\StoreManagerInterface $storeManagerInterface
+     */
     public function __construct(
        \Magento\Framework\App\Action\Context $context,
        \Sourabh\Autocomplete\Model\ResourceModel\Searchterm $searchterm,
